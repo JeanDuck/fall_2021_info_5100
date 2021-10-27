@@ -6,7 +6,9 @@ public class Q1 {
         private double price;
         private String  publishYear;
         public Book(String title, double price, String publishYear){
-
+            setTitle(title);
+            setPrice(price);
+            setPublishYear(publishYear);
         }
         abstract String description();
         public void getTitle(){
@@ -40,6 +42,7 @@ public class Q1 {
     public static class Fiction extends Book implements iBorrowable{
         private int borrowDate;
         private int returnDate;
+        private  String title;
 
 
         public Fiction(String title, double price, String publishYear) {
@@ -67,19 +70,20 @@ public class Q1 {
 
         @Override
         String description() {
-            return "Frankenstein(title) all events are imaginary and not based on real facts";
+            return "Frankenstein"+title+" all events are imaginary and not based on real facts";
         }
     }
     public static class NonFiction extends Book implements iBorrowable{
         private int borrowDate;
         private int returnDate;
+        private String title;
         public NonFiction(String title, double price, String publishYear) {
             super(title, price, publishYear);
         }
 
         @Override
         String description() {
-            return "Anne Frank(title) all events are true and based on real facts.";
+            return "Anne Frank"+title+"all events are true and based on real facts.";
         }
 
         @Override
@@ -109,11 +113,14 @@ public class Q1 {
 
         public Reference(String title, double price, String category) {
             super(title, price, category);
+            setTitle(title);
+            setPrice(price);
+            setCategory(category);
         }
 
         @Override
         String description() {
-            return "World Maps(title) all information is real.";
+            return "World Maps+"+title+"+all information is real.";
         }
         public void getTitle(){
             System.out.println(this.title);
