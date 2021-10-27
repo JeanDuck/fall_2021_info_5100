@@ -19,7 +19,7 @@ public class Q4 {
         while(right<s.length()){
             char ch=s.charAt(right);
             if(map.containsKey(ch)){
-                left=map.get(ch);
+                left=Math.max(left,map.get(ch));
             }
             if(ans<right-left+1){
                 ans=right-left+1;
