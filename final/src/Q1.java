@@ -15,7 +15,7 @@ public class Q1 {
         RIGHT
     }
 
-    public static class Roomba implements iRobot {
+    public final class Roomba implements iRobot {
         int[][] room;
         int rows;
         int cols;
